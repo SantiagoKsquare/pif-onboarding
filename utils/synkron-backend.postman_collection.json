@@ -1,0 +1,2620 @@
+{
+	"info": {
+		"_postman_id": "adf62840-f259-4c38-990a-8128a3a72c60",
+		"name": "Kportal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = JSON.parse(pm.response.stream);\r",
+									"const token = response.data.token;\r",
+									"pm.globals.set(\"token\", token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"angelsansorestheksquaregroup@gmail.com\",\r\n    \"password\": \"adminadmin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/emailauth/login",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"emailauth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = JSON.parse(pm.response.stream);\r",
+									"const token = response.data.token;\r",
+									"pm.globals.set(\"token\", token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jorge Blancas\",\r\n    \"email\": \"jorge_blancas_cruz@outlook.com\",\r\n    \"password\": \"testPassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/emailauth/register",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"emailauth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = JSON.parse(pm.response.stream);\r",
+									"const token = response.data.token;\r",
+									"pm.globals.set(\"token\", token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"testOnboarding123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/emailauth/create-new-password?tk=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzEsImVtcGxveWVlSWQiOjgwMCwic3ViIjoicmVzZXQiLCJhdWQiOiJ1c2VyIiwiZXhwIjoxNjQ3NDkzMTg1LjM3NywiaWF0IjoxNjQ3NDQ5OTg1LjM3OSwianRpIjoiZDQ1MzY5MjItMDYwZi00ZmYyLWIxMzktMGU5MGFhM2U5MzNlIiwiZW1haWwiOiJqb3JnZV9ibGFuY2FzX2NydXpAb3V0bG9vay5jb20iLCJyb2xlcyI6WzJdfQ.VGHFfm7ED1UNvVxd6e8d7EZWJ1N-GApvlcYzuXStri8",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"emailauth",
+								"create-new-password"
+							],
+							"query": [
+								{
+									"key": "tk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzEsImVtcGxveWVlSWQiOjgwMCwic3ViIjoicmVzZXQiLCJhdWQiOiJ1c2VyIiwiZXhwIjoxNjQ3NDkzMTg1LjM3NywiaWF0IjoxNjQ3NDQ5OTg1LjM3OSwianRpIjoiZDQ1MzY5MjItMDYwZi00ZmYyLWIxMzktMGU5MGFhM2U5MzNlIiwiZW1haWwiOiJqb3JnZV9ibGFuY2FzX2NydXpAb3V0bG9vay5jb20iLCJyb2xlcyI6WzJdfQ.VGHFfm7ED1UNvVxd6e8d7EZWJ1N-GApvlcYzuXStri8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Self user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/user/self?include=[\"Role\", \"Employee\"]",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"user",
+								"self"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "[\"Role\", \"Employee\"]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update self user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeId\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/user/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appraisal",
+			"item": [
+				{
+					"name": "Edit appraisal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"grossSalary\": 20000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/appraisal/556",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"appraisal",
+								"556"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New appraisal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isActive\": true,\r\n    \"grossSalary\": 24120.00,\r\n    \"netSalary\": 21012.64,\r\n    \"validSince\": \"2021-10-22T21:26:22.000Z\",\r\n    \"currencyId\": 1,\r\n    \"employeeId\": 448,\r\n    \"approvedById\": 146\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/appraisal",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"appraisal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find appraisals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/appraisal",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"appraisal"
+							],
+							"query": [
+								{
+									"key": "attributes",
+									"value": "{ \"include\": [\"netSalary\"] }",
+									"disabled": true
+								},
+								{
+									"key": "attributes",
+									"value": "[\"netSalary\"]",
+									"disabled": true
+								},
+								{
+									"key": "attributes",
+									"value": "{ \"include\": [\"netSalary\"], \"exclude\": [\"approvedById\"] }",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Benefits",
+			"item": [
+				{
+					"name": "Find all benefits",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 18,\r\n    \"name\": \"marriage\",\r\n    \"displayName\": \"Marriage\",\r\n    \"description\": \"Enjoy your honey moon.\\nWe give you 2 weeks off.\",\r\n    \"iconName\": \"Rings\",\r\n    \"params\": {\r\n        \"allowPastDates\": false,\r\n        \"timeOffName\": \"marriage\",\r\n        \"benefitResolutionFactor\": \"default\",\r\n        \"benefitForHours\": {\r\n            \"defaultAssignedHours\": 80\r\n        },\r\n        \"activationPeriod\": {\r\n            \"time\": 0,\r\n            \"unit\": \"years\"\r\n        },\r\n        \"validityStartTime\": \"hiringDate\",\r\n        \"renewalStrategy\": \"lastApprovedRequest\",\r\n        \"unit\": \"days\",\r\n        \"isByLaw\": false,\r\n        \"requireRequestToShowBalance\": true,\r\n        \"resolutionMethod\": \"default\"\r\n    },\r\n    \"type\": \"timeOff\",\r\n    \"helperText\": \"Enjoy your honey moon.\\nWe give you 2 weeks off.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/benefit/33",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"benefit",
+								"33"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "[\"benefitPackage\"]",
+									"disabled": true
+								},
+								{
+									"key": "where:{\"benefitPackage\":{ \"id\":3}}",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[ { \"model\": \"benefitPackage\", \"where\": { \"id\": \"3\" } } ]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update existing Benefit by id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"NPTO-test post edit granteds\",\r\n    \"displayName\": \"NPTO\",\r\n    \"description\": \"Take time without pay\",\r\n    \"descriptionLinks\": null,\r\n    \"iconName\": \"SandClock\",\r\n    \"params\": {\r\n        \"accumulate\": false,\r\n        \"applyRetroactively\": false,\r\n        \"allowPastDates\": false,\r\n        \"incremental\": false,\r\n        \"benefitForHours\": {\r\n            \"defaultAssignedHours\": 32\r\n        },\r\n        \"activationPeriod\": {\r\n            \"time\": 0\r\n        },\r\n        \"expirationPeriod\": {\r\n            \"time\": 8760,\r\n            \"unit\": \"years\"\r\n        },\r\n        \"validityStartTime\": \"hiringDate\",\r\n        \"renewalPeriod\": {\r\n            \"time\": 8760,\r\n            \"unit\": \"years\"\r\n        },\r\n        \"isByLaw\": false,\r\n        \"unit\": \"hrs\",\r\n        \"renewalStrategy\": \"baseRenewalPeriod\",\r\n        \"requireRequestToShowBalance\": false,\r\n        \"benefitResolutionFactor\": \"default\",\r\n        \"resolutionMethod\": \"default\",\r\n        \"showInBalance\": true\r\n    },\r\n    \"type\": \"timeOff\",\r\n    \"status\": \"active\",\r\n    \"helperText\": \"Take time without pay\",\r\n    \"regionId\": 3,\r\n    \"benefitTagId\": 3,\r\n    \"packagesIdsToAssign\": [205]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/benefit",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"benefit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create new Benefit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"active\",\r\n    \"params\": {\r\n        \"benefitResolutionFactor\": \"default\",\r\n        \"renewalStrategy\": \"baseRenewalPeriod\",\r\n        \"requireRequestToShowBalance\": false,\r\n        \"unit\": \"days\",\r\n        \"accumulate\": false,\r\n        \"applyRetroactively\": false,\r\n        \"allowPastDates\": false,\r\n        \"incremental\": false,\r\n        \"benefitForHours\": {\r\n            \"defaultAssignedHours\": 0\r\n        },\r\n        \"renewalPeriod\": {\r\n            \"time\": 8760,\r\n            \"unit\": \"years\"\r\n        },\r\n        \"activationPeriod\": {\r\n            \"time\": 0\r\n        },\r\n        \"expirationPeriod\": {\r\n            \"time\": 17520,\r\n            \"unit\": \"years\"\r\n        },\r\n        \"validityStartTime\": \"hiringDate\",\r\n        \"isByLaw\": true,\r\n        \"isVacation\": true,\r\n        \"showInBalance\": true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/benefit/33",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"benefit",
+								"33"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Benefits Package",
+			"item": [
+				{
+					"name": "Find package by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 18,\r\n    \"name\": \"marriage\",\r\n    \"displayName\": \"Marriage\",\r\n    \"description\": \"Enjoy your honey moon.\\nWe give you 2 weeks off.\",\r\n    \"iconName\": \"Rings\",\r\n    \"params\": {\r\n        \"allowPastDates\": false,\r\n        \"timeOffName\": \"marriage\",\r\n        \"benefitResolutionFactor\": \"default\",\r\n        \"benefitForHours\": {\r\n            \"defaultAssignedHours\": 80\r\n        },\r\n        \"activationPeriod\": {\r\n            \"time\": 0,\r\n            \"unit\": \"years\"\r\n        },\r\n        \"validityStartTime\": \"hiringDate\",\r\n        \"renewalStrategy\": \"lastApprovedRequest\",\r\n        \"unit\": \"days\",\r\n        \"isByLaw\": false,\r\n        \"requireRequestToShowBalance\": true,\r\n        \"resolutionMethod\": \"default\"\r\n    },\r\n    \"type\": \"timeOff\",\r\n    \"helperText\": \"Enjoy your honey moon.\\nWe give you 2 weeks off.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/benefitspackage/1?include=[\"benefits\", \"employees\"]",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"benefitspackage",
+								"1"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "[\"benefits\", \"employees\"]"
+								},
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"benefits\"}]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"benefits\": { \"id\": 22 } }",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"Benefit\", \"through\": \"BenefitsByPackage\", \"where\":  { \"id\": \"2\" }, \"require\": \"true\" }]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create package",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\",\r\n    \"description\": \"Ptest package\",\r\n    \"status\": \"active\",\r\n    \"employeesId\": [1, 2],\r\n    \"benefitsId\": [25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40],\r\n    \"regionId\": 1,\r\n    \"updatedById\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/benefitspackage",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"benefitspackage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Benefits Package",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1wbG95ZWVJZCI6MTQ2LCJzdWIiOiJhY2Nlc3MiLCJhdWQiOiJ1c2VyIiwiZXhwIjoxNjQwODMxNjA3LjM1NywiaWF0IjoxNjQwODEwMDA3LjM1NywianRpIjoiYWIzYmQ4YTctNGIyNi00OGZkLTllYzAtMWE2ZGQzN2I1ZGY4IiwiZW1haWwiOiJEaWFuYS5WaWxsYWx2YXpvQHRoZWtzcXVhcmVncm91cC5jb20iLCJyb2xlcyI6WzVdfQ.nmBnqCYYouUYCP8Yy3ROl-qbPJSgUXndeiCOo11ULCw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test package\",\r\n    \"description\": \"\",\r\n    \"status\": \"active\",\r\n    \"employeesId\": [259, 912],\r\n    \"benefitsId\": [1, 2, 3, 4, 5, 6, 7],\r\n    \"regionId\": 1,\r\n    \"updatedById\": 146\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/benefitspackage/9",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"benefitspackage",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Benefits Package",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"new package test\",\r\n    \"description\": \"Package for new employees\",\r\n    \"status\": \"disabled\",\r\n    \"temporalEmployees\": [5, 6, 7, 8, 10, 11, 12],\r\n    \"temporalBenefits\": [1, 2, 3, 4, 5, 6],\r\n    \"regionId\": 3,\r\n    \"updatedById\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/benefitspackage/11",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"benefitspackage",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Employees",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"positionId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/employees/admin/448",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"employees",
+								"admin",
+								"448"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"EmployeePackages\" }]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"benefitsPackages\"]",
+									"disabled": true
+								},
+								{
+									"key": "where[firstName]",
+									"value": "Jorge",
+									"disabled": true
+								},
+								{
+									"key": "where[managerId]",
+									"value": "577",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"skills\"]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"benefitsPackage\": { \"id\": 9 } }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"benefitsPackage\": { \"id\": 10 }, \"isActivePackage\": true }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{\"benefitsPackage\": {\"id\":14},\"isActivePackage\":true}",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"positionId\": null }",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "240",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "[[\"id\",\"ASC\"]]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"Region\",\"department\",\"position\"]",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "[[\"firstName\",\"ASC\"]]",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "200",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{\"status\":\"active\",\"benefitsPackage\":{\"id\":12}, \"isActivePackage\": false}",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"Region\",\"manager\",\"position\"]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[ \"Benefit\", \"timeOffAttachments\", \"hoursPerDayList\"]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"startDate\": { \"$gte\": 1641794400000 } }",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "[[\"startDate\", \"DESC\"]]",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"personalFiles\"]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{\"isActive\":true}",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"Project\",\"TimesheetAttachment\",\"employee\",\"workShiftList\"]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{\"status\":{\"$eq\":\"pending\"}}",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[{\"EmployeeSkills\": [\"Skill\"]}]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"User\", \"include\": [\"Role\"] }]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": " [{\"User\": [\"roles\"]}]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"Region\"]",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "[[\"Region\",\"name\",\"ASC\"]]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"managerId\": 101 }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"fullName\": { \"$iRegexp\": \"Hellen\" } }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"id\": [] }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": " { \"jobEmail\": { \"$iRegexp\": \"javier.solis@theksquaregroup.com\" } }",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": \"TestNotification@c.com\",\r\n    \"birthdate\": \"2020-08-01T15:01:11-05:00\",\r\n    \"appraisalBody\": {\r\n        \"grossSalary\": 200,\r\n        \"currencyId\": 3\r\n    },\r\n    \"benefitsPackageId\": 89,\r\n    \"departmentId\": 10,\r\n    \"emergencyContact\": \"TestNotification\",\r\n    \"emergencyNumber\": \"9999999999\",\r\n    \"extraBenefits\": [],\r\n    \"filesId\": [],\r\n    \"firstName\": \"TestAlex\",\r\n    \"hiringDate\": \"2022-02-09T15:01:00-06:00\",\r\n    \"isDepartmentManager\": false,\r\n    \"jobEmail\": \"cindy.ravell8@test.com\",\r\n    \"positionId\": 55,\r\n    \"lastName\": \"TestAlex\",\r\n    \"managerId\": 448,\r\n    \"middleName\": \"TestAlex\",\r\n    \"nationalIdentificationNumber\": \"TestNotification\",\r\n    \"personalEmail\": \"TestNotification@wASdfsfs.com\",\r\n    \"phone\": \"9999999999\",\r\n    \"profileImageId\": null,\r\n    \"projects\": [],\r\n    \"regionId\": 3,\r\n    \"roleId\": [2, 3],\r\n    \"secondLastName\": \"TestAlex\",\r\n    \"socialSecurityNumber\": \"TestNotification\",\r\n    \"status\": \"active\",\r\n    \"taxIdentificationNumber\": \"TestNotification\",\r\n    \"terminationDate\": \"\",\r\n    \"workingHours\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/employee",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"employee"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"EmployeePackages\" }]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"benefitsPackages\"]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit employee",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"managerId\": 317\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/employees/334",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"employees",
+								"334"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"EmployeePackages\" }]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"benefitsPackages\"]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Onboarding",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1wbG95ZWVJZCI6MTM2LCJzdWIiOiJzaGFyZSIsImF1ZCI6InVzZXIiLCJleHAiOjE2MzgyMjUzNzUuNjkyLCJpYXQiOjE2MzgyMDM3NzUuNjkyLCJqdGkiOiJjOTE0Yzc2MC0yNzliLTRmNTQtYmY1NS02MTJhMDA5YjUzODQiLCJlbWFpbCI6ImpvcmdlLmJsYW5jYXNAdGhla3NxdWFyZWdyb3VwLmNvbSIsInJvbGVzIjpbMl19._eQts5poGpTpb1ds0wswhYE5KCe_C5CZLx3Jx2nAAqo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jonh\",\r\n    \"lastName\": \"Doe\",\r\n    \"nationalIdentificationNumber\": \"asdcdert12345678\",\r\n    \"taxIdentificationNumber\": \"asdfghj789456\",\r\n    \"socialSecurityNumber\": \"12345678901\",\r\n    \"phone\": \"5564759576\",\r\n    \"personalEmail\": \"principesayain@gmail.com\",\r\n    \"address\": \"Letonia 45, colonia Colombia, alcaldía B\",\r\n    \"emergencyContact\": \"Martha Ameca\",\r\n    \"emergencyNumber\": \"5564759576\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/employee/self/personal-info",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"employee",
+								"self",
+								"personal-info"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"EmployeePackages\" }]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"benefitsPackages\"]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/employees/:employeId/notifications",
+							"path": [
+								"employees",
+								":employeId",
+								"notifications"
+							],
+							"variable": [
+								{
+									"key": "employeId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Employees",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"positionId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/customer?include=[\"updatedBy\"]&order=[[\"updatedBy\",\"firstName\",\"ASC\"]]",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"customer"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"EmployeePackages\" }]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"benefitsPackages\"]",
+									"disabled": true
+								},
+								{
+									"key": "where[firstName]",
+									"value": "Jorge",
+									"disabled": true
+								},
+								{
+									"key": "where[managerId]",
+									"value": "577",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"skills\"]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"benefitsPackage\": { \"id\": 9 } }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"benefitsPackage\": { \"id\": 10 }, \"isActivePackage\": true }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{\"benefitsPackage\": {\"id\":14},\"isActivePackage\":true}",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"positionId\": null }",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "240",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "[[\"id\",\"ASC\"]]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"Region\",\"department\",\"position\"]",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "[[\"firstName\",\"ASC\"]]",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "200",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{\"status\":\"active\",\"benefitsPackage\":{\"id\":12}, \"isActivePackage\": false}",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"Region\",\"manager\",\"position\"]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[ \"Benefit\", \"timeOffAttachments\", \"hoursPerDayList\"]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"startDate\": { \"$gte\": 1641794400000 } }",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "[[\"startDate\", \"DESC\"]]",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"personalFiles\"]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"fullName\": { \"$iRegexp\": \"Jorge Blancas\" } }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{\"isActive\":true}",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"Project\",\"TimesheetAttachment\",\"employee\",\"workShiftList\"]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{\"status\":{\"$eq\":\"pending\"}}",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[{\"EmployeeSkills\": [\"Skill\"]}]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"User\", \"include\": [\"Role\"] }]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": " [{\"User\": [\"roles\"]}]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": " { \"personalEmail\": { \"$iRegexp\": \"Victor.Trejo@theksquaregroup.com\" } }",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"updatedBy\"]"
+								},
+								{
+									"key": "order",
+									"value": "[[\"updatedBy\",\"firstName\",\"ASC\"]]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": \"TestNotification@c.com\",\r\n    \"birthdate\": \"2020-08-01T15:01:11-05:00\",\r\n    \"appraisalBody\": {\r\n        \"grossSalary\": 200,\r\n        \"currencyId\": 3\r\n    },\r\n    \"benefitsPackageId\": 89,\r\n    \"departmentId\": 10,\r\n    \"emergencyContact\": \"TestNotification\",\r\n    \"emergencyNumber\": \"9999999999\",\r\n    \"extraBenefits\": [],\r\n    \"filesId\": [],\r\n    \"firstName\": \"TestAlex\",\r\n    \"hiringDate\": \"2022-02-09T15:01:00-06:00\",\r\n    \"isDepartmentManager\": false,\r\n    \"jobEmail\": \"cindy.ravell8@test.com\",\r\n    \"positionId\": 55,\r\n    \"lastName\": \"TestAlex\",\r\n    \"managerId\": 448,\r\n    \"middleName\": \"TestAlex\",\r\n    \"nationalIdentificationNumber\": \"TestNotification\",\r\n    \"personalEmail\": \"TestNotification@wASdfsfs.com\",\r\n    \"phone\": \"9999999999\",\r\n    \"profileImageId\": null,\r\n    \"projects\": [],\r\n    \"regionId\": 3,\r\n    \"roleId\": [2, 3],\r\n    \"secondLastName\": \"TestAlex\",\r\n    \"socialSecurityNumber\": \"TestNotification\",\r\n    \"status\": \"active\",\r\n    \"taxIdentificationNumber\": \"TestNotification\",\r\n    \"terminationDate\": \"\",\r\n    \"workingHours\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/employee",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"employee"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"EmployeePackages\" }]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"benefitsPackages\"]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit employee",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"managerId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/employee/6",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"employee",
+								"6"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"EmployeePackages\" }]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"benefitsPackages\"]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Onboarding",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1wbG95ZWVJZCI6MTM2LCJzdWIiOiJzaGFyZSIsImF1ZCI6InVzZXIiLCJleHAiOjE2MzgyMjUzNzUuNjkyLCJpYXQiOjE2MzgyMDM3NzUuNjkyLCJqdGkiOiJjOTE0Yzc2MC0yNzliLTRmNTQtYmY1NS02MTJhMDA5YjUzODQiLCJlbWFpbCI6ImpvcmdlLmJsYW5jYXNAdGhla3NxdWFyZWdyb3VwLmNvbSIsInJvbGVzIjpbMl19._eQts5poGpTpb1ds0wswhYE5KCe_C5CZLx3Jx2nAAqo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jonh\",\r\n    \"lastName\": \"Doe\",\r\n    \"nationalIdentificationNumber\": \"asdcdert12345678\",\r\n    \"taxIdentificationNumber\": \"asdfghj789456\",\r\n    \"socialSecurityNumber\": \"12345678901\",\r\n    \"phone\": \"5564759576\",\r\n    \"personalEmail\": \"principesayain@gmail.com\",\r\n    \"address\": \"Letonia 45, colonia Colombia, alcaldía B\",\r\n    \"emergencyContact\": \"Martha Ameca\",\r\n    \"emergencyNumber\": \"5564759576\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/employee/self/personal-info",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"employee",
+								"self",
+								"personal-info"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"EmployeePackages\" }]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"benefitsPackages\"]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Files",
+			"item": [
+				{
+					"name": "Find all files",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isPublished\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/file/184",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"file",
+								"184"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "[{\"PersonalFile\": [\"File\"]}]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"File\"]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": " { \"fileName\": { \"$iRegexp\": \"Emua_long\" } }",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create file",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fileName\": \"example03FromPersonalFile.jpg\",\r\n    \"type\": \"image/jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/personalfile",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"personalfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Position",
+			"item": [
+				{
+					"name": "Find positions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/position?limit=196",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"position"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "196"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New position",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sr. Flutter Developer\",\r\n    \"acronym\": \"SFD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/position",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"position"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "Find project by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/project-members/admin",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"project-members",
+								"admin"
+							],
+							"query": [
+								{
+									"key": "attributes",
+									"value": "{ \"include\": [\"rate\"] }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"name\": { \"$or\": [ \"Holiday\", \"Ksquare Administrative\"] } }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{\"isActive\": true, \"isGeneral\": false }",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"Project\", \"where\": { \"isGeneral\": false } }]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[{\"ProjectMember\": [\"Employee\"]}]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"Employee\", \"Project\"]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"projectId\": 70 }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"name\": { \"$iRegexp\": \"KSG_DIGITAL TRANSFORMATION\" } }",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"Project\"]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[{ model: 'Project', where: { isGeneral: false } }]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{\"employeeId\":[144,471],\"isActive\":true}",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[{\"model\":\"Project\",\"where\":{\"isGeneral\":false}}]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[{\"Employee\":[\"Position\"]}]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"projectId\": 159 }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"employeeId\": 81 }",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find project",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/projectMember?include=[\"Employee\"]&where={ \"projectId\": 159 }",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"projectMember"
+							],
+							"query": [
+								{
+									"key": "attributes",
+									"value": "{ \"include\": [\"rate\"] }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"name\": { \"$or\": [ \"Holiday\", \"Ksquare Administrative\"] } }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{\"isActive\": true, \"isGeneral\": false }",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"Project\", \"where\": { \"isGeneral\": false } }]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"projectId\": 70 }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"name\": { \"$iRegexp\": \"KSG_DIGITAL TRANSFORMATION\" } }",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"Employee\"]"
+								},
+								{
+									"key": "where",
+									"value": "{ \"projectId\": 159 }"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find project types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/project/74",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"project",
+								"74"
+							],
+							"query": [
+								{
+									"key": "attributes",
+									"value": "{ \"include\": [\"rate\"] }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"name\": { \"$or\": [ \"Holiday\", \"Ksquare Administrative\"] } }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{\"isActive\": true, \"isGeneral\": false }",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"Project\", \"where\": { \"isGeneral\": false } }]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[{\"ProjectMember\": [\"Employee\"]}]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"Employee\", \"Project\"]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"projectId\": 70 }",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"name\": { \"$iRegexp\": \"KSGKIZ_TechnogGym \" } }",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit project",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"approverId\": 317\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/project/74",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"project",
+								"74"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{ \"name\": { \"$or\": [ \"Holiday\", \"Ksquare Administrative\", \"Certification/Study Time \", \"Delivery and Operations\"] } }",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Certification/Study Time 2\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"2021-06-01T00:00:00.000Z\",\r\n    \"endDate\": \"2021-12-31T00:00:00.000Z\",\r\n    \"isActive\": true,\r\n    \"isGeneral\": false,\r\n    \"customerId\": 55,\r\n    \"businessunitId\": 3,\r\n    \"approverId\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/project",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NEW MEMBER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"role\": \"test\",\r\n\r\n    \"isActive\": true,\r\n\r\n    \"forecastedHours\": 2,\r\n\r\n    \"percentOfTime\": 100,\r\n\r\n    \"rate\": 0,\r\n\r\n    \"employeeId\": 282,\r\n\r\n    \"projectId\": 156\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/project/project-members/admin",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"project",
+								"project-members",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Resumes",
+			"item": [
+				{
+					"name": "Find resume by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{HOST}}/resumes/templates/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"resumes",
+								"templates",
+								"1"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{ \"employeeId\": 166 }",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View shared resume",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZUlkIjozLCJzdWIiOiJzaGFyZSIsImF1ZCI6InVzZXIiLCJleHAiOjE2NDA4MTcwNDEuNjI3LCJpYXQiOjE2NDA3OTU0NDEuNjI4LCJqdGkiOiI4MzdiZTYwNy02ODE2LTQwODgtYjA5OS1kM2IyMzU0ZGYzMjUiLCJlbWFpbCI6ImpvcmdlLmJsYW5jYXNAdGhla3NxdWFyZWdyb3VwLmNvbSIsInJvbGVzIjpbNF0sImN1c3RvbVBhcmFtcyI6eyJyZXN1bWVJZCI6MX19.rQVmXyWBNDNGV6dFk9H6j3mnyS6kAKs4osbtM76vyEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{HOST}}/resumes/viewer",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"resumes",
+								"viewer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create resume",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resumeData\": {\r\n      \"resumeTitle\": \"My Resume Name\",\r\n      \"basics\": {\r\n        \"name\": \"Jorge Blancas\",\r\n        \"label\": \"Software Engineer\",\r\n        \"image\": 109,\r\n        \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n        \"url\": \"http://piedpiper.com\"\r\n      },\r\n      \"work\": [\r\n        {\r\n          \"position\": \"Software Engineer\",\r\n          \"company\": \"The Ksquare Group\",\r\n          \"client\": \"The Ksquare Group\",\r\n          \"city\": \"Merida\",\r\n          \"startDate\": \"2021-06-17\",\r\n          \"endDate\": \"2021-06-17\",\r\n          \"InProgress\": false,\r\n          \"projectName\": \"Kportal\",\r\n          \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n          \"skills\": [\r\n            \"leadership\"\r\n          ],\r\n          \"technologies\": [\r\n            \"nodejs\"\r\n          ]\r\n        },\r\n        {\r\n          \"position\": \"Software Engineer\",\r\n          \"company\": \"The Ksquare Group\",\r\n          \"client\": \"The Ksquare Group\",\r\n          \"city\": \"Merida\",\r\n          \"startDate\": \"2021-06-17\",\r\n          \"endDate\": \"2021-06-17\",\r\n          \"InProgress\": false,\r\n          \"projectName\": \"Kportal\",\r\n          \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n          \"skills\": [\r\n            \"leadership\"\r\n          ],\r\n          \"technologies\": [\r\n            \"nodejs\"\r\n          ]\r\n        },\r\n        {\r\n          \"position\": \"Software Engineer\",\r\n          \"company\": \"The Ksquare Group\",\r\n          \"client\": \"The Ksquare Group\",\r\n          \"city\": \"Merida\",\r\n          \"startDate\": \"2021-06-17\",\r\n          \"endDate\": \"2021-06-17\",\r\n          \"InProgress\": false,\r\n          \"projectName\": \"Kportal\",\r\n          \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n          \"skills\": [\r\n            \"leadership\"\r\n          ],\r\n          \"technologies\": [\r\n            \"nodejs\"\r\n          ]\r\n        },\r\n        {\r\n          \"position\": \"Software Engineer\",\r\n          \"company\": \"The Ksquare Group\",\r\n          \"client\": \"The Ksquare Group\",\r\n          \"city\": \"Merida\",\r\n          \"startDate\": \"2021-06-17\",\r\n          \"endDate\": \"2021-06-17\",\r\n          \"InProgress\": false,\r\n          \"projectName\": \"Kportal\",\r\n          \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n          \"skills\": [\r\n            \"leadership\"\r\n          ],\r\n          \"technologies\": [\r\n            \"nodejs\"\r\n          ]\r\n        },\r\n        {\r\n          \"position\": \"Software Engineer\",\r\n          \"company\": \"The Ksquare Group\",\r\n          \"client\": \"The Ksquare Group\",\r\n          \"city\": \"Merida\",\r\n          \"startDate\": \"2021-06-17\",\r\n          \"endDate\": \"2021-06-17\",\r\n          \"InProgress\": false,\r\n          \"projectName\": \"Kportal\",\r\n          \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n          \"skills\": [\r\n            \"leadership\"\r\n          ],\r\n          \"technologies\": [\r\n            \"nodejs\"\r\n          ]\r\n        },\r\n        {\r\n          \"position\": \"Software Engineer\",\r\n          \"company\": \"The Ksquare Group\",\r\n          \"client\": \"The Ksquare Group\",\r\n          \"city\": \"Merida\",\r\n          \"startDate\": \"2021-06-17\",\r\n          \"endDate\": \"2021-06-17\",\r\n          \"InProgress\": false,\r\n          \"projectName\": \"Kportal\",\r\n          \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n          \"skills\": [\r\n            \"leadership\"\r\n          ],\r\n          \"technologies\": [\r\n            \"nodejs\"\r\n          ]\r\n        }\r\n      ],\r\n      \"education\": [\r\n        {\r\n          \"studyType\": \"Bachelor in Embedded Systems\",\r\n          \"institution\": \"Universidad Politecnica de Yucatan\",\r\n          \"startDate\": \"2021-06-17\",\r\n          \"endDate\": \"2021-06-17\",\r\n          \"inProgress\": false\r\n        },\r\n        {\r\n          \"studyType\": \"Bachelor in Embedded Systems\",\r\n          \"institution\": \"Universidad Politecnica de Yucatan\",\r\n          \"startDate\": \"2021-06-17\",\r\n          \"endDate\": \"2021-06-17\",\r\n          \"inProgress\": false\r\n        },\r\n        {\r\n          \"studyType\": \"Bachelor in Embedded Systems\",\r\n          \"institution\": \"Universidad Politecnica de Yucatan\",\r\n          \"startDate\": \"2021-06-17\",\r\n          \"endDate\": \"2021-06-17\",\r\n          \"inProgress\": false\r\n        },\r\n        {\r\n          \"studyType\": \"Bachelor in Embedded Systems\",\r\n          \"institution\": \"Universidad Politecnica de Yucatan\",\r\n          \"startDate\": \"2021-06-17\",\r\n          \"endDate\": \"2021-06-17\",\r\n          \"inProgress\": false\r\n        }\r\n      ],\r\n      \"certifications\": [\r\n        {\r\n          \"institution\": \"Institute example\",\r\n          \"specialization\": \"CMMI DEV 2 certificate\",\r\n          \"startDate\": \"2011-06-01\",\r\n          \"endDate\": \"2014-01-01\",\r\n          \"inProgress\": false\r\n        },\r\n        {\r\n          \"institution\": \"Institute example\",\r\n          \"specialization\": \"CMMI DEV 2 certificate\",\r\n          \"startDate\": \"2011-06-01\",\r\n          \"endDate\": \"2014-01-01\",\r\n          \"inProgress\": false\r\n        },\r\n        {\r\n          \"institution\": \"Institute example\",\r\n          \"specialization\": \"CMMI DEV 2 certificate\",\r\n          \"startDate\": \"2011-06-01\",\r\n          \"endDate\": \"2014-01-01\",\r\n          \"inProgress\": false\r\n        }\r\n      ],\r\n      \"languages\": [\r\n        {\r\n          \"language\": \"English\",\r\n          \"fluency\": \"Native Speaker\"\r\n        },\r\n        {\r\n          \"language\": \"German\",\r\n          \"fluency\": \"Beginner\"\r\n        }\r\n      ],\r\n      \"awards\": [\r\n        {\r\n          \"title\": \"Award example\",\r\n          \"date\": \"2021-06-17\"\r\n        },\r\n        {\r\n          \"title\": \"Award example\",\r\n          \"date\": \"2021-06-17\"\r\n        },\r\n        {\r\n          \"title\": \"Award example\",\r\n          \"date\": \"2021-06-17\"\r\n        }\r\n      ],\r\n      \"skills\": [\r\n        {\r\n          \"name\": \"Web Development\"\r\n        },\r\n        {\r\n          \"name\": \"Web Development\"\r\n        },\r\n        {\r\n          \"name\": \"Web Development\"\r\n        },\r\n        {\r\n          \"name\": \"Web Development\"\r\n        }\r\n      ],\r\n      \"technologies\": [\r\n        {\r\n          \"name\": \"React\"\r\n        },\r\n        {\r\n          \"name\": \"React\"\r\n        },\r\n        {\r\n          \"name\": \"React\"\r\n        },\r\n        {\r\n          \"name\": \"React\"\r\n        }\r\n      ]\r\n    },\r\n    \"isPublished\": true,\r\n    \"employeeId\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/resumes",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"resumes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update resume",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeId\": 482,\r\n    \"resumeData\": {\r\n        \"resumeTitle\": \"My Resume Name\",\r\n        \"basics\": {\r\n            \"name\": \"Jorge Blancas\",\r\n            \"label\": \"Software Engineer\",\r\n            \"image\": 117,\r\n            \"branding\": false,\r\n            \"showImage\": false,\r\n            \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\"\r\n        },\r\n        \"work\": [\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"a1b8e9ae-3fab-489c-9cb6-dc2938eba2e6\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"c4042dac-5297-4deb-87e3-fa99222c60e9\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"a76a4d93-a4ed-4ee1-b8be-8bc1b173a3e5\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"3c6dc4cd-020c-4bca-b14b-eb14b9970432\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"9a75726e-71d6-4246-8e7e-e1ebdcb2b5c0\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"d4b7e168-fe1c-4cb8-974f-e529dc271e78\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"a1b8e9ae-3fab-489c-9cb6-dc2938eba2e6\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"c4042dac-5297-4deb-87e3-fa99222c60e9\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"a76a4d93-a4ed-4ee1-b8be-8bc1b173a3e5\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"3c6dc4cd-020c-4bca-b14b-eb14b9970432\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"9a75726e-71d6-4246-8e7e-e1ebdcb2b5c0\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"d4b7e168-fe1c-4cb8-974f-e529dc271e78\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"a1b8e9ae-3fab-489c-9cb6-dc2938eba2e6\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"c4042dac-5297-4deb-87e3-fa99222c60e9\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"a76a4d93-a4ed-4ee1-b8be-8bc1b173a3e5\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"3c6dc4cd-020c-4bca-b14b-eb14b9970432\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"9a75726e-71d6-4246-8e7e-e1ebdcb2b5c0\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"d4b7e168-fe1c-4cb8-974f-e529dc271e78\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"a1b8e9ae-3fab-489c-9cb6-dc2938eba2e6\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"c4042dac-5297-4deb-87e3-fa99222c60e9\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"a76a4d93-a4ed-4ee1-b8be-8bc1b173a3e5\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"3c6dc4cd-020c-4bca-b14b-eb14b9970432\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"9a75726e-71d6-4246-8e7e-e1ebdcb2b5c0\"\r\n            },\r\n            {\r\n                \"position\": \"Software Engineer\",\r\n                \"company\": \"The Ksquare Group\",\r\n                \"client\": \"The Ksquare Group\",\r\n                \"city\": \"Merida\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"projectName\": \"Kportal\",\r\n                \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n                \"skills\": [\r\n                    \"leadership\"\r\n                ],\r\n                \"technologies\": [\r\n                    \"nodejs\"\r\n                ],\r\n                \"id\": \"d4b7e168-fe1c-4cb8-974f-e529dc271e78\"\r\n            }\r\n        ],\r\n        \"education\": [\r\n            {\r\n                \"studyType\": \"Bachelor in Embedded Systems\",\r\n                \"institution\": \"Universidad Politecnica de Yucatan\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"inProgress\": false,\r\n                \"id\": \"5bbec38c-6a31-416e-a0d6-887dfc7a8adf\"\r\n            },\r\n            {\r\n                \"studyType\": \"Bachelor in Embedded Systems\",\r\n                \"institution\": \"Universidad Politecnica de Yucatan\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"inProgress\": false,\r\n                \"id\": \"9b31e1e9-f95c-45b1-8c6d-291498c1d44f\"\r\n            },\r\n            {\r\n                \"studyType\": \"Bachelor in Embedded Systems\",\r\n                \"institution\": \"Universidad Politecnica de Yucatan\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"inProgress\": false,\r\n                \"id\": \"7399f836-ea0f-4515-bee6-dc976b0f7259\"\r\n            },\r\n            {\r\n                \"studyType\": \"Bachelor in Embedded Systems\",\r\n                \"institution\": \"Universidad Politecnica de Yucatan\",\r\n                \"startDate\": \"2021-06-17\",\r\n                \"endDate\": \"2021-06-17\",\r\n                \"inProgress\": false,\r\n                \"id\": \"cbabe63e-f60c-4ab7-82c5-d826a6d0fe41\"\r\n            }\r\n        ],\r\n        \"certifications\": [\r\n            {\r\n                \"institution\": \"Institute example\",\r\n                \"specialization\": \"CMMI DEV 2 certificate\",\r\n                \"startDate\": \"2011-06-01\",\r\n                \"endDate\": \"2014-01-01\",\r\n                \"inProgress\": false,\r\n                \"id\": \"bfdbab5d-5e46-425f-8125-38d99efb9e5b\"\r\n            },\r\n            {\r\n                \"institution\": \"Institute example\",\r\n                \"specialization\": \"CMMI DEV 2 certificate\",\r\n                \"startDate\": \"2011-06-01\",\r\n                \"endDate\": \"2014-01-01\",\r\n                \"inProgress\": false,\r\n                \"id\": \"39f2ae56-d373-480c-8e98-e5a56d6ee102\"\r\n            },\r\n            {\r\n                \"institution\": \"Institute example\",\r\n                \"specialization\": \"CMMI DEV 2 certificate\",\r\n                \"startDate\": \"2011-06-01\",\r\n                \"endDate\": \"2014-01-01\",\r\n                \"inProgress\": false,\r\n                \"id\": \"f2f32aa2-8ace-43e3-b6cc-f514700dd48b\"\r\n            }\r\n        ],\r\n        \"languages\": [\r\n            {\r\n                \"language\": \"English\",\r\n                \"fluency\": \"Native Speaker\",\r\n                \"id\": \"647981ef-bcd4-4c3d-8779-65dab34935f5\"\r\n            },\r\n            {\r\n                \"language\": \"German\",\r\n                \"fluency\": \"Beginner\",\r\n                \"id\": \"a7cc627c-fe01-4bd7-a92e-2d3fd25fe88d\"\r\n            }\r\n        ],\r\n        \"awards\": [\r\n            {\r\n                \"title\": \"Award example\",\r\n                \"date\": \"2021-06-17\",\r\n                \"id\": \"b2b27208-4484-425b-938b-31f55cee4a27\"\r\n            },\r\n            {\r\n                \"title\": \"Award example\",\r\n                \"date\": \"2021-06-17\",\r\n                \"id\": \"0d85ffd5-3d5f-41d6-bdbd-1998de8918df\"\r\n            },\r\n            {\r\n                \"title\": \"Award example\",\r\n                \"date\": \"2021-06-17\",\r\n                \"id\": \"a3aa8cec-9fe8-4be6-a117-5a5377ce4a82\"\r\n            }\r\n        ],\r\n        \"skills\": [\r\n            {\r\n                \"name\": \"Web Development\"\r\n            },\r\n            {\r\n                \"name\": \"Web Development\"\r\n            },\r\n            {\r\n                \"name\": \"Web Development\"\r\n            },\r\n            {\r\n                \"name\": \"Web Development\"\r\n            }\r\n        ],\r\n        \"technologies\": [\r\n            {\r\n                \"name\": \"React\"\r\n            },\r\n            {\r\n                \"name\": \"React\"\r\n            },\r\n            {\r\n                \"name\": \"React\"\r\n            },\r\n            {\r\n                \"name\": \"React\"\r\n            }\r\n        ]\r\n    },\r\n    \"isPublished\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/resumes/6",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"resumes",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shareform",
+			"item": [
+				{
+					"name": "Share resumeor onboarding",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImVtcGxveWVlSWQiOjQ4Miwic3ViIjoiYWNjZXNzIiwiYXVkIjoidXNlciIsImV4cCI6MTY0MzE1MTY0Ny41NDQsImlhdCI6MTY0MzEzMDA0Ny41NDUsImp0aSI6IjlhZmFhNGU0LTNhOTAtNDAwNi1iODM2LTE3NWJhZTkxOGMzZCIsImVtYWlsIjoiSm9yZ2UuQmxhbmNhc0B0aGVrc3F1YXJlZ3JvdXAuY29tIiwicm9sZXMiOlsyLDVdfQ.Zu-AXRdE5AqrLGyEwI-AX53Hm6lRHFAZymb-kOZzLKI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailTemplate\": \"onboarding\",\r\n    \"mails\": [\r\n        \"jorge589dant@gmail.com\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/employee/shareform",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"employee",
+								"shareform"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"EmployeePackages\" }]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"benefitsPackages\"]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Template",
+			"item": [
+				{
+					"name": "Find template by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{HOST}}/resumes/templates/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"resumes",
+								"templates",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TimeOffBalance",
+			"item": [
+				{
+					"name": "TimeOffBalance by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/time-off-balance/admin/254",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"time-off-balance",
+								"admin",
+								"254"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TimeOffGranted",
+			"item": [
+				{
+					"name": "TimeOffGranted",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"totalHours\": 48,\r\n    \"availabilityStartDate\": \"2021-10-22T21:26:22.000Z\",\r\n    \"availabilityEndDate\": \"2023-10-22T21:26:22.000Z\",\r\n    \"remainder\": 48,\r\n    \"temporalRemainderHours\": 48,\r\n    \"isActive\": true,\r\n    \"employeeId\": 278,\r\n    \"benefitId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/timeoffgranted?where[employeeId]=254",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"timeoffgranted"
+							],
+							"query": [
+								{
+									"key": "where[employeeId]",
+									"value": "254"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TimeOffGranted",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"totalHours\": 48,\r\n    \"availabilityStartDate\": \"2021-10-22T21:26:22.000Z\",\r\n    \"availabilityEndDate\": \"2023-10-22T21:26:22.000Z\",\r\n    \"remainder\": 48,\r\n    \"temporalRemainderHours\": 48,\r\n    \"isActive\": true,\r\n    \"employeeId\": 278,\r\n    \"benefitId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/timeoffgranted/7102",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"timeoffgranted",
+								"7102"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TimeOffRequest",
+			"item": [
+				{
+					"name": "TimeOffRequest",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"totalHours\": 48,\r\n    \"availabilityStartDate\": \"2021-10-22T21:26:22.000Z\",\r\n    \"availabilityEndDate\": \"2023-10-22T21:26:22.000Z\",\r\n    \"remainder\": 48,\r\n    \"temporalRemainderHours\": 48,\r\n    \"isActive\": true,\r\n    \"employeeId\": 278,\r\n    \"benefitId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/timeoffrequest",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"timeoffrequest"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{ \"state\": [\"requested\", \"approved\"]}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Self time off requests",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"managerId\": 157\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/employee/self/timeoffrequests/?include=[%22Benefit%22,%22timeOffAttachments%22,%22hoursPerDayList%22]&where=%7B%22startDate%22:%7B%22$gte%22:1639980000000%7D%7D&order=[[%22startDate%22,%22DESC%22]]&limit=10",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"employee",
+								"self",
+								"timeoffrequests",
+								""
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "[{ \"model\": \"EmployeePackages\" }]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"benefitsPackages\"]",
+									"disabled": true
+								},
+								{
+									"key": "where[firstName]",
+									"value": "Jorge",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"firstName\": \"Jorge\" }",
+									"disabled": true
+								},
+								{
+									"key": "where[managerId]",
+									"value": "577",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[\"skills\"]",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": " [{\"EmployeeSkills\": [\"Skill\"]}]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"benefitsPackage\": { \"id\": 9 } }",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "[%22Benefit%22,%22timeOffAttachments%22,%22hoursPerDayList%22]"
+								},
+								{
+									"key": "where",
+									"value": "%7B%22startDate%22:%7B%22$gte%22:1639980000000%7D%7D"
+								},
+								{
+									"key": "order",
+									"value": "[[%22startDate%22,%22DESC%22]]"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New TimeOffRequest",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestedHours\": 8,\r\n    \"startDate\": \"2022-03-29\",\r\n    \"endDate\": \"2022-03-29\",\r\n    \"approverExternalId\": \"88bd3bde-6220-4256-a3f8-a352b7ac7b7a\",\r\n    \"employeeExtarnalId\": \"20cd4227-3324-4573-aa6a-d699ea3bf88b\",\r\n    \"benefitName\": \"pto\",\r\n    \"state\": \"approved\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/timeoffrequest/migrate-creation",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"timeoffrequest",
+								"migrate-creation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New TimeOffRequest Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"requestedHours\": 8,\r\n  \"hoursPerDayList\": [\r\n    {\r\n      \"date\": \"2022-03-22T00:00:00Z\",\r\n      \"hours\": 4\r\n    },\r\n    {\r\n      \"date\": \"2022-03-23T00:00:00Z\",\r\n      \"hours\": 4\r\n    }\r\n  ],\r\n  \"startDate\": \"2022-03-22T00:00:00Z\",\r\n  \"endDate\": \"2022-03-23T00:00:00Z\",\r\n  \"approverId\": 136,\r\n  \"employeeId\": 522,\r\n  \"benefitId\": 55\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/timeoffrequest",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"timeoffrequest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update TimeOffRequest (manager)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"state\": \"rejected\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/timeoffrequest/190",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"timeoffrequest",
+								"190"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update TimeOffRequest (employee)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"requestedHours\": 5,\r\n  \"hoursPerDayList\": [\r\n    {\r\n      \"date\": \"2021-12-29T00:00:00Z\",\r\n      \"hours\": 3\r\n    },\r\n    {\r\n      \"date\": \"2021-12-30T00:00:00Z\",\r\n      \"hours\": 2\r\n    }\r\n  ],\r\n  \"startDate\": \"2021-12-29T00:00:00Z\",\r\n  \"endDate\": \"2021-12-30T00:00:00Z\",\r\n  \"approverId\": 3,\r\n  \"employeeId\": 5,\r\n  \"benefitId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/employee/self/timeoffrequest/190",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"employee",
+								"self",
+								"timeoffrequest",
+								"190"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NEW TimeOffRequest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n  \"requestedHours\": 8,\r\n\r\n  \"hoursPerDayList\": [\r\n\r\n    {\r\n\r\n      \"date\": \"2022-03-22T00:00:00Z\",\r\n\r\n      \"hours\": 4\r\n\r\n    },\r\n\r\n    {\r\n\r\n      \"date\": \"2022-03-23T00:00:00Z\",\r\n\r\n      \"hours\": 4\r\n\r\n    }\r\n\r\n  ],\r\n\r\n  \"startDate\": \"2022-03-22T00:00:00Z\",\r\n\r\n  \"endDate\": \"2022-03-23T00:00:00Z\",\r\n\r\n  \"approverId\": 136,\r\n\r\n  \"employeeId\": 522,\r\n\r\n  \"benefitId\": 55\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/timeoffrequest/self",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"timeoffrequest",
+								"self"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Timesheet",
+			"item": [
+				{
+					"name": "Remove self timesheet",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/employee/self/timesheets/5",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"employee",
+								"self",
+								"timesheets",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove self timesheet Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/employee/self/timesheets/5",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"employee",
+								"self",
+								"timesheets",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New timesheet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"comment\": \"\",\r\n  \"employeeId\": 136,\r\n  \"endDate\": \"2022-03-06T06:00:00.000Z\",\r\n  \"projectId\": 1,\r\n  \"startDate\": \"2022-02-28T06:00:00.000Z\",\r\n  \"status\": \"pending\",\r\n  \"workedHours\": 1,\r\n  \"workShiftList\": [\r\n    {\r\n      \"date\": \"2022-02-28T06:00:00.000Z\",\r\n      \"hours\": 1\r\n    },\r\n    {\r\n      \"date\": \"2022-03-01T06:00:00.000Z\",\r\n      \"hours\": 0\r\n    },\r\n    {\r\n      \"date\": \"2022-03-02T06:00:00.000Z\",\r\n      \"hours\": 0\r\n    },\r\n    {\r\n      \"date\": \"2022-03-03T06:00:00.000Z\",\r\n      \"hours\": 0\r\n    },\r\n    {\r\n      \"date\": \"2022-03-04T06:00:00.000Z\",\r\n      \"hours\": 0\r\n    },\r\n    {\r\n      \"date\": \"2022-03-05T06:00:00.000Z\",\r\n      \"hours\": 0\r\n    },\r\n    {\r\n      \"date\": \"2022-03-06T06:00:00.000Z\",\r\n      \"hours\": 0\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/timesheets/self",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"timesheets",
+								"self"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit timesheet",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\":\"\",\r\n    \"employeeId\": 482,\r\n    \"endDate\":\"2022-03-13T05:00:00.000Z\",\r\n    \"projectId\": 87,\r\n    \"startDate\":\"2022-03-07T05:00:00.000Z\",\r\n    \"status\":\"pending\",\r\n    \"workedHours\":40,\r\n    \"workShiftList\":[\r\n        {\r\n            \"id\": 415446,\r\n            \"hours\": 4,\r\n            \"date\": \"2022-03-07\",\r\n            \"taskName\": \"Editing Timesheet test\",\r\n            \"timesheetId\": 80872\r\n        },\r\n        {\r\n            \"id\": 415447,\r\n            \"hours\": 4.5,\r\n            \"date\": \"2022-03-08\",\r\n            \"taskName\": \"Editing Timesheet test\",\r\n            \"timesheetId\": 80872\r\n        },\r\n        {\r\n            \"id\": 415448,\r\n            \"hours\": 3,\r\n            \"date\": \"2022-03-09\",\r\n            \"taskName\": \"Editing Timesheet test\",\r\n            \"timesheetId\": 80872\r\n        },\r\n        {\r\n            \"id\": 415449,\r\n            \"hours\": 3,\r\n            \"date\": \"2022-03-10\",\r\n            \"taskName\": \"Editing Timesheet test\",\r\n            \"timesheetId\": 80872\r\n        },\r\n        {\r\n            \"id\": 415450,\r\n            \"hours\": 3,\r\n            \"date\": \"2022-03-11\",\r\n            \"taskName\": \"Editing Timesheet test\",\r\n            \"timesheetId\": 80872\r\n        },\r\n        {\r\n            \"id\": 415451,\r\n            \"hours\": 0,\r\n            \"date\": \"2022-03-12\",\r\n            \"taskName\": \"Editing Timesheet test\",\r\n            \"timesheetId\": 80872\r\n        },\r\n        {\r\n            \"id\": 415452,\r\n            \"hours\": 0,\r\n            \"date\": \"2022-03-13\",\r\n            \"taskName\": \"Editing Timesheet test\",\r\n            \"timesheetId\": 80872\r\n        },\r\n        {\r\n            \"id\": 415453,\r\n            \"hours\": 4.5,\r\n            \"date\": \"2022-03-07\",\r\n            \"timesheetId\": 80872\r\n        },\r\n        {\r\n            \"id\": 415454,\r\n            \"hours\": 4.5,\r\n            \"date\": \"2022-03-08\",\r\n            \"timesheetId\": 80872\r\n        },\r\n        {\r\n            \"id\": 415455,\r\n            \"hours\": 4.5,\r\n            \"date\": \"2022-03-09\",\r\n            \"timesheetId\": 80872\r\n        },\r\n        {\r\n            \"id\": 415456,\r\n            \"hours\": 4.5,\r\n            \"date\": \"2022-03-10\",\r\n            \"taskName\": \"\",\r\n            \"timesheetId\": 80872\r\n        },\r\n        {\r\n            \"id\": 415457,\r\n            \"hours\": 4.5,\r\n            \"date\": \"2022-03-11\",\r\n            \"taskName\": \"\",\r\n            \"timesheetId\": 80872\r\n        },\r\n        {\r\n            \"id\": 415458,\r\n            \"hours\": 0,\r\n            \"date\": \"2022-03-12\",\r\n            \"taskName\": \"\",\r\n            \"timesheetId\": 80872\r\n        },\r\n        {\r\n            \"id\": 415459,\r\n            \"hours\": 0,\r\n            \"date\": \"2022-03-13\",\r\n            \"timesheetId\": 80872\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/timesheet/80872",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"timesheet",
+								"80872"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Migrate timesheet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"workedHours\": 8,\r\n    \"date\": \"2020-12-01\",\r\n    \"employeeExternalId\": \"865ced5e-76e7-4833-b8da-1de48a0c02eb\",\r\n    \"projectName\": \"Bold Box Studio - Discipline\",\r\n    \"status\": \"pending\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/timesheet/migrate-creation",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"timesheet",
+								"migrate-creation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find timesheet by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/timesheet?where={ \"employeeId\": 81 }",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"timesheet"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "[\"employee\",\"project\",\"timesheetAttachment\",\"workShiftList\"]",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{\"status\":[\"draft\",\"pending\",\"rejected\",\"approved\"],\"startDate\":\"2022-03-07T06:00:00.000Z\",\"endDate\":\"2022-03-13T06:00:00.000Z\",\"employeeId\":482}",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"employeeId\": 482}",
+									"disabled": true
+								},
+								{
+									"key": "where",
+									"value": "{ \"employeeId\": 81 }"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"item": [
+				{
+					"name": "Test endpoint for specific changes in remote",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/test/linkPositions",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"test",
+								"linkPositions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "Get notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/employees/self/notifications?where=%7B%22isRead%22:false,%22requiresAction%22:false%7D&order=[[%22createdAt%22,%22DESC%22]]",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"employees",
+								"self",
+								"notifications"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "%7B%22isRead%22:false,%22requiresAction%22:false%7D"
+								},
+								{
+									"key": "order",
+									"value": "[[%22createdAt%22,%22DESC%22]]"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
