@@ -28,7 +28,7 @@ docker pull postgres
 This command run the postgres docker container
 
 ```
-docker run --name myPostgresDb -p 5455:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=Passw0rd -e POSTGRES_DB=appbackend -d postgres
+docker run --name myPostgresDb -p 5455:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=Passw0rd -e POSTGRES_DB=appbackend -v /custom/mount:/var/lib/postgresql/data -d postgres
 ```
 
 # Viewing data
