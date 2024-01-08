@@ -13,7 +13,7 @@ Frontend:
 Backend:
 
 - [Synkron Backend](https://github.com/Ksquare-University/kportal-back) (Since the PIF backend was intgrated into the Synkron backend plataform)
-- [PIF Backend](https://github.com/Ksquare-University/kportal-back) (Legacy repository)
+- [PIF Backend](https://github.com/KsquareTools/pif-backend) (Legacy repository)
 - [DB Models](https://github.com/KsquareTools/ksquare-ecosystem-commons)
 
 Nex step is request access to your Manager or Team Lead. If you don't have a Github user, please create one with your organizational email.
